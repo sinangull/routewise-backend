@@ -19,6 +19,10 @@ model = genai.GenerativeModel('models/gemini-flash-latest') # veya gemini-2.0-fl
 
 app = FastAPI()
 
+@app.get("/")
+def ana_sayfa():
+    return {"Durum": "Çalışıyor", "Mesaj": "RouteWise Sunucusuna Hoşgeldiniz! 🚀"}
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
